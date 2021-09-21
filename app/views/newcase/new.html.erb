@@ -62,7 +62,11 @@ margin-top:100px;
        <p class="h5" style="font-weight:250;padding-top:0px;">Are you married to the other parent or do you have a domestic partnership?</p>
              <div style="padding-bottom:10px;">
        <div class="text-center">
-    <button type="button" class="btn btn-lg btn-warning " style="margin-right:10px;"  data-bs-toggle="modal"data-bs-dismiss="modal" data-bs-target="#m-or-d">Yes</button>
+      
+     
+
+    <button type="button" class="btn btn-lg btn-warning " style="margin-right:10px;"  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#m-or-d"><%= link_to "Yes",yesmarried_newcase_path(newcase) %></button>
+     
     <button type="button" class="btn btn-lg btn-warning p4 "  data-bs-toggle="modal" data-bs-target="#married-question">No</button>
     </div>
     </div>

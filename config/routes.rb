@@ -11,7 +11,12 @@ Rails.application.routes.draw do
     get '/blog', to:'nav_pages#blog'
     
     get '/new', to:'newcase#new'
-    post '/new', to:'newcase#create'
- 
-
+    
+    
+    resources :newcase do
+        member do
+        patch :yesmarried
+        put :yesmarried
+    end
+     end
 end
