@@ -1,0 +1,157 @@
+<style>
+.m-top{
+margin-top:100px;
+}
+</style>
+<div class="container nc-pad">
+
+<div class="container" style="width:75%">
+<p class="display-6"> Ok, Great! lets get your case started!</p>
+<p class="h4"> Choose your state:</p>
+<%= form_with(model: @newcase, local: true) do |form| %>
+ <%= form.select:state, [["Alaska", "Alaska"], ["Alabama", "Alabama"], ["Arizona", "Arizona"], ["Arkansas", "Arkansas"], ["California", "California"], ["Colorado", "Colorado"], ["Connecticut", "Connecticut"], ["Delaware", "Delaware"], ["Florida", "Floirda"], ["Georgia", "Georgia"], ["Hawaii", "Hawaii"], ["Idaho", "Idaho"], ["Illinois", "Illinois"], ["Indiana", "Indiana"], ["Iowa", "Iowa"], ["Kansas", "Kansas"], ["Kentucky", "Kentucky"], ["Louisiana", "Louisiana"], ["Maine", "Maine"], ["Maryland", "Maryland"], ["Massachusetts", "Massachusetts"], ["Michigan", "Michigan"], ["Mississippi", "Mississippi"], ["Missouri", "Missouri"], ["Montana", "Montnana"], ["Idaho", "Idaho"], ["Illinois", "Illinois"], ["Indiana", "Indiana"]],{} , { :class => 'form-select'}%>
+
+
+    
+    <button type="button" class="btn btn-block btn-warning mt-2 "  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#children-involved" aria-hidden="true" >Next</button>
+
+</div>
+</div>
+<!-----number of children modal----->
+
+<div class="modal fade m-top" id="children-involved" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="modify-case">How many children are involved?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+       <p class="h5" style="font-weight:250;padding-top:0px;" >Please select the number of children involved:</p>
+             <div style="padding-bottom:10px;">
+             
+             
+             
+            . 
+  <%= form.select :number_of_children, [[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"], [6, "6"], [7, "7"], [8, "8"], [9, "9"]],{} , { :class => 'form-select'}%>
+
+
+    <button type="button" class="btn btn-block btn-warning mt-2 "  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#divorce-question" aria-hidden="true"  >Next</button>
+
+    
+    <%end%>
+    
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-----are you married----->
+
+<div class="modal fade m-top" id="divorce-question" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="modify-case">Are you married?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+       <p class="h5" style="font-weight:250;padding-top:0px;">Are you married to the other parent or do you have a domestic partnership?</p>
+             <div style="padding-bottom:10px;">
+       <div class="text-center">
+    <button type="button" class="btn btn-lg btn-warning " style="margin-right:10px;"  data-bs-toggle="modal"data-bs-dismiss="modal" data-bs-target="#m-or-d">Yes</button>
+    <button type="button" class="btn btn-lg btn-warning p4 "  data-bs-toggle="modal" data-bs-target="#married-question">No</button>
+    </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!------Domestic partnership or married---->
+
+
+
+<div class="modal fade m-top" id="m-or-d" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="modify-case">Married or Domestic Partnership?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+       <p class="h5" style="font-weight:250;padding-top:0px;">Please select which one:</p>
+    <div style="padding-bottom:10px;">
+       <div class="text-center">
+      
+      
+    <button type="button" class="btn  btn-block btn-warning  mt-4"   data-bs-toggle="modal" data-bs-target="#yes-married" data-bs-dismiss="modal">Married</button>
+     </div>
+   <div class="text-center">
+    <button type="button" class="btn  btn-block btn-warning  mt-4 "  data-bs-toggle="modal" data-bs-target="#yes-married" data-bs-dismiss="modal">Domestic Partnership</button>
+    </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!------Yes married / domestic parnership---->
+
+<div class="modal fade m-top" id="yes-married" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="modify-case">Divorce or No Divorce? </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+       <p class="h5" style="font-weight:250;padding-top:0px;">Since you are married or have a domestic partnership you can either:<br>
+             1. File for divorce, legal separation, or annulment.</p>
+             <div class="h6 text-center" style="font-weight:250;padding-top:0px;">OR</div>
+             <p class="h5" style="font-weight:250;padding-top:0px;">2.If you do NOT want to get a divorce, legal separation, or annulment, you can start a case called a Petition for Custody and Support of Minor Children.This lets the court make custody and visitation orders and other orders.
+       </p>
+             <div style="padding-bottom:10px;">
+       <div class="text-center">
+    <button type="button" class="btn btn-lg btn-warning  mt-4" "  data-bs-toggle="modal" data-bs-target="#yes-divorce" data-bs-dismiss="modal">File for Divorce</button>
+    <button type="button" class="btn btn-lg btn-warning  mt-4 "  data-bs-toggle="modal" data-bs-target="#yes-divorce" data-bs-dismiss="modal">Proceed without Divorce</button>
+    </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!------yes divorce---->
+<div class="modal fade" style="margin-top:170px;" id="yes-divorce" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="modify-case">Ok Great!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      
+      
+      <div class="modal-body ">
+    <p> lets get some info so we may we begin to prepare the divorce forms, which will include the request for child custody.</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

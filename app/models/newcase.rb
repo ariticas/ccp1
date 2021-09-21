@@ -1,0 +1,2 @@
+class Newcase < ApplicationRecord
+end
