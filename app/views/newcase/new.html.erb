@@ -10,64 +10,47 @@ margin-top:100px;
 <p class="h4"> Choose your state:</p>
 <%= form_with(model: @newcase, local: true) do |form| %>
  <%= form.select:state, [["Alaska", "Alaska"], ["Alabama", "Alabama"], ["Arizona", "Arizona"], ["Arkansas", "Arkansas"], ["California", "California"], ["Colorado", "Colorado"], ["Connecticut", "Connecticut"], ["Delaware", "Delaware"], ["Florida", "Floirda"], ["Georgia", "Georgia"], ["Hawaii", "Hawaii"], ["Idaho", "Idaho"], ["Illinois", "Illinois"], ["Indiana", "Indiana"], ["Iowa", "Iowa"], ["Kansas", "Kansas"], ["Kentucky", "Kentucky"], ["Louisiana", "Louisiana"], ["Maine", "Maine"], ["Maryland", "Maryland"], ["Massachusetts", "Massachusetts"], ["Michigan", "Michigan"], ["Mississippi", "Mississippi"], ["Missouri", "Missouri"], ["Montana", "Montnana"], ["Idaho", "Idaho"], ["Illinois", "Illinois"], ["Indiana", "Indiana"]],{} , { :class => 'form-select'}%>
+     
+    <br>
 
+     <p class="h5"> Please select the number of children involved:</p>
 
-    
-    <button type="button" class="btn btn-block btn-warning mt-2 "  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#children-involved" aria-hidden="true" >Next</button>
+     
+        
+        
+        <div style="padding-bottom:10px;">
+       
+        <%= form.select:number_of_children, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"]],{} , { :class => 'form-select'}%>
+       <br>
+         <%= form.submit 'next', class:"btn btn-block btn-lg rounded btn-warning", "data-toggle" => "modal", 'data-target' => '#divorce-question', "data-bs-dismiss"=>"modal"  %>
+        
+        <%end%>
+     
+      
+</div>
 
 </div>
 </div>
-<!-----number of children modal----->
 
-<div class="modal fade m-top" id="children-involved" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl ">
-    <div class="modal-content ">
-      <div class="modal-header">
-        <h5 class="modal-title text-primary" id="modify-case">How many children are involved?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-       <p class="h5" style="font-weight:250;padding-top:0px;" >Please select the number of children involved:</p>
-             <div style="padding-bottom:10px;">
-             
-             
-             
-            . 
-  <%= form.select :number_of_children, [[1, "1"], [2, "2"], [3, "3"], [4, "4"], [5, "5"], [6, "6"], [7, "7"], [8, "8"], [9, "9"]],{} , { :class => 'form-select'}%>
-
-
-    <button type="button" class="btn btn-block btn-warning mt-2 "  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#divorce-question" aria-hidden="true"  >Next</button>
-
-    
-    <%end%>
-    
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 <!-----are you married----->
-
+ 
 <div class="modal fade m-top" id="divorce-question" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl ">
     <div class="modal-content ">
       <div class="modal-header">
-        <h5 class="modal-title text-primary" id="modify-case">Are you married?</h5>
+        <h5 class="modal-title text-primary" id="modify-case">Marriage Status?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body ">
-       <p class="h5" style="font-weight:250;padding-top:0px;">Are you married to the other parent or do you have a domestic partnership?</p>
+       <p class="h5" style="padding-top:0px;">Are you married to the other parent or do you have a domestic partnership?</p>
              <div style="padding-bottom:10px;">
-       <div class="text-center">
       
-     
+      <p class="h5" style="font-weight:250;"> Please select which one:</p>
+      <br>
 
-    <button type="button" class="btn btn-lg btn-warning " style="margin-right:10px;"  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#m-or-d"><%= link_to "Yes",yesmarried_newcase_path(newcase) %></button>
-     
-    <button type="button" class="btn btn-lg btn-warning p4 "  data-bs-toggle="modal" data-bs-target="#married-question">No</button>
+        
+    <%=link_to 'yes',newcase_yes_married_path(@newcase), class:"btn btn-lg rounded btn-warning", action: "yesmarried",method: "patch", "data-toggle" => "modal", 'data-target' => '#married-question', "data-bs-dismiss"=>"modal"  %>
+        
     </div>
     </div>
     <div class="modal-footer">
@@ -93,8 +76,8 @@ margin-top:100px;
        <p class="h5" style="font-weight:250;padding-top:0px;">Please select which one:</p>
     <div style="padding-bottom:10px;">
        <div class="text-center">
-      
-      
+
+    
     <button type="button" class="btn  btn-block btn-warning  mt-4"   data-bs-toggle="modal" data-bs-target="#yes-married" data-bs-dismiss="modal">Married</button>
      </div>
    <div class="text-center">
