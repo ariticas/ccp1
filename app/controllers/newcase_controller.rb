@@ -1,17 +1,20 @@
 class NewcaseController < ApplicationController
   def new
-    @newcase = Newcase.new
+    @newcase_user = Newcase.new
+    
   end
   
   def create
-      @newcase = Newcase.new(newcase_params)
-      @newcase.save
+      @newcase_user = Newcase.new(newcase_params)
+      if @newcase_user.save
+         session[:newcase_user_id] = @newcase_user.id
+         redirect_to user_steps_path, notice: "Welcome to Child Custody Plus"
+      else
+          render :new
+      
   end
+end
 
-  def yes_married
-    @newcase = Newcase.find(params[:id])
-    @newcase.update_attribute(:married, 'yes')
-  end
   
   def update
   end

@@ -1,7 +1,8 @@
 <style>
 
-h5{
+.h5{
 padding:10px;
+font-weight:250;
 }
 .col-sm{
 margin-top:10px;
@@ -55,7 +56,7 @@ font-weight:200;
 <!----new case section--->
 
 
-<!-- Modal trigger -->
+
 <div class=" container-fluid text-left help-sec bg-light " style="border:none;margin-top:0px;">
 <%=link_to 'I would like to open a new child custody case.',new_newcase_path, class:"btn btn-lg rounded btn-outline-success h5"%>
 </div>
@@ -66,65 +67,22 @@ font-weight:200;
 
 <!------modify section---->
 
-<!-- Modal trigger -->
-<div class=" container-fluid text-left help-sec bg-light">
-<button type="button" class="btn btn-sm rounded btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#modify-case">
- <p class="h5" style="font-weight:250;padding-top:7px;" > I would like assistance modifying an existing child custody case.</p>
-</button>
-<!-- Modal -->
-<div class="modal fade" id="modify-case" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl ">
-    <div class="modal-content ">
-      <div class="modal-header">
-        <h5 class="modal-title text-primary" id="modify-case">Excellent! Lets get your case modified!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-       <p >Are you married to the other parent?</p>
-               <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Yes</button>
-                       <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No</button>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      
-      </div>
-    </div>
-  </div>
+<div class=" container-fluid text-left help-sec bg-light " style="margin-top:0px;">
+<%=link_to 'I would like assistance modifying an existing child custody case.',new_newcase_path, class:"btn btn-lg rounded btn-outline-primary h5 "%>
 </div>
 
+
+
+<!------response section---->
+
+<div class=" container-fluid text-left help-sec bg-light " style="margin-top:0px;">
+<%=link_to 'I have been served and would like assistance filing my response.',new_newcase_path, class:"btn btn-lg rounded btn-outline-danger h5 "%>
 </div>
 
 
 
 
-
-<div class=" container-fluid text-left help-sec bg-light">
-<button type="button" class="btn btn-sm rounded btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#modify-case">
- <p class="h5" style="font-weight:250;padding-top:7px;"> I have been served and would like assistance filing my response.</p>
-</button>
-<!-- Modal -->
-<div class="modal fade" id="modify-case" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl ">
-    <div class="modal-content ">
-      <div class="modal-header">
-        <h5 class="modal-title text-primary" id="modify-case">Excellent! Lets get your case modified!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-       <p >Are you married to the other parent?</p>
-               <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Yes</button>
-                       <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No</button>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
+<!------video section---->
 
 <div class="container-fluid" style="border-bottom:solid;">
 <div class="container">
@@ -134,6 +92,7 @@ font-weight:200;
 </div>
 </div>
 
+<!------QA section---->
 
 
 <div class="container-fluid text-center mt-2 " style="border-bottom:solid;" >

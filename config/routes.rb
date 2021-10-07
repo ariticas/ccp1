@@ -1,24 +1,21 @@
 Rails.application.routes.draw do
   
-    root 'nav_pages#home'
-   
  
+  get 'newcase_married_divorce/new'
+  devise_for :users
+  resources :newcase, :as => :newcases
+  resources :user_steps
+    
+    root 'nav_pages#home'
     get '/home', to:'nav_pages#home'
-  
     get '/wwd', to:'nav_pages#wwd'
     get '/about', to:'nav_pages#about'
     get '/contact', to:'nav_pages#contact'
     get '/blog', to:'nav_pages#blog'
-    put '/newcase_yes_married', to: 'newcase#yes_married'
-    patch  '/newcase_yes_married', to: 'newcase#yes_married'
+    get '/yesdivorce', to: 'divorce#yesdivorce'
+    get '/nodivorce', to: 'divorce#nodivorce'
     
-    resources :newcase, :as => :newcases do
-    member do
-         put :yes_married
-         patch :yes_married
-       end
-   end
-
+    
    
 
    
