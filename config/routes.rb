@@ -3,8 +3,9 @@ Rails.application.routes.draw do
  
   get 'newcase_married_divorce/new'
   devise_for :users
-  resources :newcase, :as => :newcases
-  resources :user_steps
+  resources :divorce_steps
+  resources :no_divorce_steps
+  resources :not_married_steps
     
     root 'nav_pages#home'
     get '/home', to:'nav_pages#home'

@@ -1,0 +1,2 @@
+class NewcaseDivorce < ApplicationRecord
+end

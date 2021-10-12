@@ -1,11 +1,11 @@
 class NewcaseController < ApplicationController
   def new
-    @newcase_user = Newcase.new
+    @user = User.new
     
   end
   
   def create
-      @newcase_user = Newcase.new(newcase_params)
+      @user = N.new(newcase_params)
       if @newcase_user.save
          session[:newcase_user_id] = @newcase_user.id
          redirect_to user_steps_path, notice: "Welcome to Child Custody Plus"

@@ -10,45 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_07_221253) do
+ActiveRecord::Schema.define(version: 2021_10_08_013254) do
 
-  create_table "newcases", force: :cascade do |t|
-    t.string "state"
+  create_table "newcase_divorces", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "dob"
-    t.string "email"
-    t.string "telephone_number"
-    t.string "addr"
-    t.string "respondent_fname"
-    t.string "respondent_lname"
-    t.string "respondent_addr"
     t.string "marriage_date"
-    t.string "state_of_marriage"
-    t.string "date_of_seperation"
-    t.string "number_of_children"
-    t.string "children_addr"
-    t.string "occupation"
-    t.string "work_addr"
-    t.string "net_monthly"
+    t.string "seperatiion_date"
+    t.string "telephone"
+    t.string "married"
+    t.string "domestic_partnership"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "domesticp"
-    t.string "married", default: "no"
+  end
+
+  create_table "newcase_no_divorces", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "telephone"
+    t.string "request_cs"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "newcase_not_marrieds", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "telephone"
+    t.string "paternity"
+    t.string "request_cs"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "state"
     t.string "number_of_children"
+    t.index "reset_password_token", name: "index_users_on_reset_password_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
