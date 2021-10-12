@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_013254) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "state"
     t.string "number_of_children"
-    t.index "reset_password_token", name: "index_users_on_reset_password_token", unique: true
+    t.index "\"reset_password_token\"", name: "index_users_on_reset_password_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
