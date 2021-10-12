@@ -10,17 +10,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-   POST /resource
-   def create
-       @user = User.new(sign_up_params)
-       if @user.save
+  # POST /resource
+  # def create
+  #     @user = User.new(sign_up_params)
+  #     if @user.save
          
-          redirect_to user_steps_path, notice: "Welcome to Child Custody Plus"
-       else
-           render :new
+         #        redirect_to user_steps_path, notice: "Welcome to Child Custody Plus"
+         #    else
+         #        render :new
        
-   end
-   end
+       # end
+       # end
 
   # GET /resource/edit
   # def edit
